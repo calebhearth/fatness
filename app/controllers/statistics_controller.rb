@@ -1,4 +1,5 @@
 class StatisticsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /statistics
   # GET /statistics.json
   def index
