@@ -1,0 +1,27 @@
+<h1>Listing statistics</h1>
+
+<table>
+  <tr>
+    <th>Weight</th>
+    <th>Steps</th>
+    <th>Taken on</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @statistics.each do |statistic| %>
+  <tr>
+    <td><%= statistic.weight %></td>
+    <td><%= statistic.steps %></td>
+    <td><%= statistic.taken_on %></td>
+    <td><%= link_to 'Show', statistic %></td>
+    <td><%= link_to 'Edit', edit_statistic_path(statistic) %></td>
+    <td><%= link_to 'Destroy', statistic, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Statistic', new_statistic_path %>
